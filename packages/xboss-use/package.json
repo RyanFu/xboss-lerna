@@ -1,0 +1,30 @@
+{
+  "name": "@xboss/use",
+  "version": "1.7.1",
+  "description": "Composition API",
+  "author": "郑国榕 <zhengguorong@zj.tech>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build:lib": "node ./scripts/build.js",
+    "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
+    "build": "yarn build:lib && yarn build:types",
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://npm.yunbanfang.cn/"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "typescript": "^4.0.2"
+  },
+  "gitHead": "58df9f3c63efadb821138d777141b6361899022e"
+}

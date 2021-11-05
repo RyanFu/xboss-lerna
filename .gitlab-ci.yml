@@ -1,0 +1,32 @@
+stages:
+  - website
+  - release
+
+pages:
+ image: node:latest
+ stage: website
+ script:
+  - yarn global add lerna
+  - yarn bootstrap
+  - yarn build:site
+  - rm -rf public
+  - mkdir public
+  - cp -r packages/xboss-components/site/* public
+ artifacts:
+  expire_in: 1 day
+  paths:
+  - public
+ only:
+  - master
+  - merge_requests
+
+build:
+  image: node:latest
+  stage: release
+  script:
+    - yarn global add lerna
+    - lerna bootstrap
+    - yarn release
+  only:
+  - master
+  - merge_requests

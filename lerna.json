@@ -1,0 +1,23 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "ignoreChanges": [
+    "ignored-file",
+    "**/__tests__/**",
+    "**/*.md"
+  ],
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "allowBranch": ["master"],
+      "message": "chore(release): publish %s"
+    },
+    "publish": {
+      "registry": "http://npm.yunbanfang.cn"
+    }
+  }
+}

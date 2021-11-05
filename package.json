@@ -1,0 +1,19 @@
+{
+  "name": "xboss",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build:site": "lerna run build-site --scope=@xboss/components",
+    "prepare": "husky install",
+    "test": "lerna run test",
+    "release": "yarn test && lerna run build && lerna publish --yes"
+  },
+  "lint-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix"
+  }
+}

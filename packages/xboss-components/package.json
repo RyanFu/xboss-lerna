@@ -1,0 +1,60 @@
+{
+  "name": "@xboss/components",
+  "version": "1.6.1",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "dev": "xboss-cli dev",
+    "test": "xboss-cli test",
+    "lint": "xboss-cli lint",
+    "build": "xboss-cli build",
+    "clean": "xboss-cli clean",
+    "test:coverage": "open test/coverage/index.html",
+    "build-site": "xboss-cli build-site"
+  },
+  "author": "",
+  "license": "MIT",
+  "lint-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less,scss}": "stylelint --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0",
+    "@xboss/cli": "^1.4.0",
+    "vue": "^3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@vant"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@vant/stylelint-config"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "browserslist": [
+    "Chrome >= 51",
+    "iOS >= 10"
+  ],
+  "gitHead": "58df9f3c63efadb821138d777141b6361899022e",
+  "dependencies": {
+    "@xboss/use": "^1.7.1"
+  }
+}
